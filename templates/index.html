@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>COVID-19 & Criminal Incidents</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/style.css">
+    <!-- Leaflet JS & CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <!-- Marker Cluster JS & CSS -->
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+</head>
+
+<body>
+  
+  <!-- Header -->
+  <div class="row">
+        <div class="row">
+          <div class="col-sm-3 header-left">Covid Criminals Team
+          </div>
+          <div class="col-md-9 header-right">Analysing the impact of Covid-19 on Crimes in New York City
+          </div>
+        </div>
+    <br>
+    <br>
+  </div>
+  <!-- End of Header -->
+
+  <!-- Feature Image --> 
+  <div class="container container-img">
+    <div class="row ">
+      <div class="col-md-12 ">
+        <img src="https://raw.githubusercontent.com/navidmalakootikhah/Project_2/master/header.jpg" class="img-fluid header-img" alt="Responsive image">
+
+      </div>
+    </div>
+  </div>
+  <!-- End of Feature Image -->
+  
+
+  <!-- Observation -->
+  <br>
+  <br>
+  <div class="container">
+    <div class="row container-img"  >
+      <div class="col-md-12 exp-box">
+        <h2>Covid-19 & Crime in New York City:</h2>
+        <hr>
+        <h4>This page is a visualization of Covid-19 correlation with crimes in New York City from February 2020 until the present time.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- End of Observation  -->
+
+
+  <!-- NYC Line Charts -->
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 the-chart" >
+        <div id="line" style="align-items: center; margin-left: 20px;"></div>
+      </div>    
+    </div>
+  </div>
+  <!-- End of NYC Line Charts -->
+
+  <!-- NYC Bar Charts -->
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12  the-chart ">
+        <div id="bar_stacked"  ></div>
+      </div>    
+    </div>
+  </div>
+  <!-- End of NYC Bar Charts -->
+
+  <!-- How it works -->
+  <br>
+  <br>
+  <div class="container">
+    <div class="row container-img"  >
+      <div class="col-md-12 exp-box">
+        <h2>How it works:</h2>
+        <br>
+        <h4>Pick a specific date then select one of the boroughs to see the charts and informatio about the COVID-19 and crimes.</h4>
+      </div>
+    </div>
+  </div>
+  <!-- End of How it works -->
+
+  <!-- Nav Bar -->
+  <br>
+  <br>
+  <div class="container " style="align-content: center;" >
+    <div   class="row menu-bar" >
+      <div class="col-md-3">
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+      <div class="col-md-8">
+        <p>
+          <button value="BRONX" class="btn active btn-primary" type="button" onclick="updateCharts(document.getElementById('selDataset').value, value)"  data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            BRONX
+          </button>
+          <button value="BROOKLYN" class="btn btn-primary" type="button" onclick="updateCharts(document.getElementById('selDataset').value, value)" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            BROOKLYN
+          </button>
+          <button value="STATEN ISLAND" class="btn btn-primary" type="button" onclick="updateCharts(document.getElementById('selDataset').value, value)" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            STATEN ISLAND
+          </button>
+          <button value="MANHATTAN" class="btn btn-primary" type="button" onclick="updateCharts(document.getElementById('selDataset').value, value)" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            MANHATTAN
+          </button>
+          <button value="QUEENS" class="btn btn-primary" type="button" onclick="updateCharts(document.getElementById('selDataset').value, value)" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            QUEENS
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End of Nav Bar -->
+
+  <!-- Polar & Bar Chart -->
+  <br>
+  <br>
+  <div class="container">
+    <div style="margin-top:10px" class="row">
+      <div class="col-md-4 the-chart-left" id="chartjsDiv">
+        <canvas id="polarChart" width="400" height="400"></canvas>
+      </div>
+
+        <div class="col-md-5   the-chart-right">
+        <div id="bar"></div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End of Polar & Bar Chart -->
+
+  <!-- Summary Tables -->
+  <br>
+
+  <div class="container">
+    <div style="margin-top:10px" class="row">
+      <div class="col-md-4 the-table-left">
+        <h3>COVID-19 SUMMARY</h3>
+          <table id="covidTable"></table>
+      </div>
+      <div class="col-md-4 col-md-offset-4  the-table-right">
+        <h3>CRIME SUMMARY</h3>
+          <table id="crimeTable"></table>
+      </div>
+
+    </div>
+  </div>
+  <!-- End of Summary Tables -->
+
+  <!-- Bar Chart for borough -->
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 the-chart" >
+        <div id="lineChartTotal" style="align-items: center; margin-left: 20px;"></div>
+      </div>    
+    </div>
+  </div>
+  <!-- End of Bar Chart for borough -->
+
+  <!-- Map -->
+  <br>
+  <br>
+  <div class="container  ">
+    <div style="margin-top:10px" class="row">
+      <div class="col-md-12 the-map-title">Status of Covid-19 and Crimes Incidents in boroughs of New York City in the selected date
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 the-map"  id="mapUpdater">
+        <div id="map" style=" height: 680px;">
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- End of Map -->
+
+<!-- Footer -->
+<br>
+<br>
+<div class="row">
+  <div class="row">
+    <div class="col-md-9 header-right"> </div>
+    <div class="col-sm-3 header-left">Covid Criminals Team</div>
+  </div>
+</div>
+<!-- End of Footer -->
+
+  <!-- Scripts -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script type="text/javascript" src="../static/js/config.js"></script>
+  <script src="../static/js/app.js"></script>
+  <!-- End of Scripts -->
+  
+</body>
+</html>

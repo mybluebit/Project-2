@@ -1,0 +1,228 @@
+/* Style the buttons */
+body {
+  background-color: #f3f6f9;
+  /* background-color: #fbf9f0; */
+}
+
+
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #7f63f4;
+  cursor: pointer;
+  font-size: 18px;
+}
+ 
+.btn-primary.active{
+  background-color: #7f63f4;
+  color: white;
+}
+
+.active, .btn:hover {
+  background-color: #7f63f4;
+  color: white;
+}
+
+.header-left {
+
+  background-color: #7f63f4;
+  height: 40px;
+  color: white;
+  font-size: 18px;
+  /* margin: 1px; */
+  padding: 5px;
+  padding-left: 42px;
+  text-align: left;
+}
+
+.header-right {
+
+  background-color: #bebebe;
+  height: 40px;
+  color: #7f63f4;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.header-testy {
+  background-image: url();
+}
+
+
+.header-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.container-img {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 31px;
+  color: white;
+  background-color: #775ce2;
+  width: 97%;
+  opacity:0.8;  
+}
+
+
+.exp-box {
+  background-color: #fcf9f9;
+  width: 98%;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  box-shadow: 1px 1px 5px   rgb(87, 87, 87);
+}
+
+.menu-bar {
+  background-color: #fcf9f9;
+  width: 100%;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: center;
+  color: black;
+  box-shadow: 1px 1px 5px   rgb(87, 87, 87);
+}
+
+#selDataset {
+ background-color: #ffc71e;
+ font-size: 20px;
+ font-family: 'Times New Roman', Times, serif;
+ max-width: 100%;
+ padding: 10px;
+ border-radius: 5px;
+ color: #1e1838;
+
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 42px;
+  font-weight: normal;
+  text-align: left;
+  color: #45358d
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 33px;
+  font-weight: normal;
+  text-align: left;
+  color: #45358d
+}
+
+
+h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: left;
+  color: #45358d
+}
+
+h4 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 22px;
+  font-weight: normal;
+  text-align: left;
+}
+
+td {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.the-chart {
+  width: 98%;
+  background-color: #fff;
+  align-content: center;
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 2px 2px 10px   rgb(87, 87, 87);
+}
+
+.the-chart-left {
+  width: 40%;
+  background-color: #fff;
+  align-content: center;
+  border-radius: 10px;
+  padding: 4px;
+  margin-right: 10px;
+  box-shadow: 2px 2px 10px   rgb(87, 87, 87);
+}
+
+.the-chart-right {
+  width: 55%;
+  background-color: #fff;
+  align-content: center;
+  border-radius: 10px;
+  padding: 4px;
+  margin-left: 10px;
+  box-shadow: 2px 2px 10px   rgb(87, 87, 87);
+}
+
+.the-table-left {
+  width: 40%;
+  background-color: #fff;
+  align-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  padding-left: 40px;
+
+  margin-right: 10px;
+  box-shadow: 2px 2px 10px   rgb(87, 87, 87);
+}
+
+.the-table-right {
+  width: 55%;
+  background-color: #fff;
+  align-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  padding-left: 40px;
+
+  margin-left: 10px;
+  box-shadow: 2px 2px 10px   rgb(87, 87, 87);
+}
+
+.the-map-title {
+  width: 98%;
+  background-color: #fff;
+  align-content: center;
+  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: 2px 0px 10px   rgb(87, 87, 87);
+  font-family: 'Times New Roman, Times, serif';
+  color: #45358d;
+  font-size: 24px;
+  text-align: center;
+  align-content: center;
+  padding: 10px;
+}
+.the-map {
+  width: 98%;
+  background-color: #fff;
+  align-content: center;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 14px;
+  box-shadow: 2px 0px 10px   rgb(87, 87, 87);
+}
